@@ -2,6 +2,7 @@ import React from "react";
 
 const LaunchHeader = ( {status, mission} ) =>
 {
+    
     return(
         <>
             <div className="header">
