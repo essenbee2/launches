@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'fomantic-ui-css/semantic.css';
+import Layout from './components/Layout.js';
+import Launch from './components/Launch.js';
+import { Container } from 'semantic-ui-react'
+import launchData from "./testdata/UpcomingLaunchesSample.json";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Layout>
+    <Container>
+      <Launch launch={launchData.results[0]} />
+    </Container>
+  </Layout>
+)
 
 export default App;
+
