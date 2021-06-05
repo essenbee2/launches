@@ -9,7 +9,7 @@ const Header = () => (
                 <h1 className="header item">
                         <span>
                             <img className="ui avatar image" src={logo} alt="Codebase Alpha logo" />
-                            CodebaseAlpha.dev
+                            Upcoming Rocket Launches
                         </span>
                 </h1>
             </Container>

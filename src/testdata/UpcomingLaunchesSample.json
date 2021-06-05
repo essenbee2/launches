@@ -288,7 +288,7 @@
       "tbdtime": false,
       "tbddate": false,
       "probability": -1,
-      "holdreason": "",
+      "holdreason": "Hold for weather",
       "failreason": "",
       "hashtag": null,
       "launch_service_provider": {
