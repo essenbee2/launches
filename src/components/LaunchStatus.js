@@ -4,8 +4,8 @@ const LaunchStatus = ({ net, status, failreason, holdreason }) =>
 {
     return(
         <>
-            <div><b>NET</b>: {" "} {net}</div>
-            <div><b>Status</b>: {" "}
+            <div><i className="icon calendar"></i><b>NET</b>: {" "} {net}</div>
+            <div><i className="icon check circle"></i><b>Status</b>: {" "}
                 <span className={status.id === 3 ? "ui green text" : null}>
                     {status.name}
                 </span>

@@ -6,9 +6,9 @@ const Launches = ( {data} ) =>
     return (
         <div className="ui four stackable raised cards">
             { data.map((launch) =>
-            (
-                <Launch launch={launch} />
-            )
+                (
+                    <Launch launch={launch} />
+                )
             )}
       </div>
     );

@@ -7,8 +7,8 @@ const LaunchHeader = ( {status, mission} ) =>
         <>
             <div className="header">
             <i className={status.id !== 3 
-                ? "icon bookmark"
-                : "icon green bookmark"} /> 
+                ? "icon satellite dish"
+                : "icon green satellite dish"} /> 
             {mission.name}
         </div>
         {mission.orbit !== null
