@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import useLaunchLibrary, { REQUEST_STATUS } from "../hooks/useLaunchLibrary";
 import Launch from './Launch';
 import ReactPlaceHolder from "react-placeholder";
+import { SearchContext } from "../contexts/SearchContext";
 
 const Launches = () =>
 {
+    const { searchTerm } = useContext(SearchContext);
+
     const {
         launchData,
         requestStatus,
         error,
-      } = useLaunchLibrary();
-       
+      } = useLaunchLibrary(searchTerm);
+      
       if (requestStatus === REQUEST_STATUS.FAILURE) {
         return (
           <div>
               <span className="ui large error text">
-                    <b>Loading Launch Data Failed with {error}</b>
+                    <b>Loading Launch Library Data Failed with {error}</b>
                 </span>
           </div>
         );
@@ -31,9 +34,27 @@ const Launches = () =>
             <ReactPlaceHolder
                     type="media"
                     rows={15}
-                    ready={requestStatus === REQUEST_STATUS.SUCCESS}
-            >
-                { launchData.map((launch) =>
+                    ready={requestStatus === REQUEST_STATUS.SUCCESS} >
+                { launchData
+                    .filter((item) =>
+                        {
+                            let company = item.launch_service_provider?.name ?? "";
+                            let rocket = item.rocket?.configuration?.name ?? "";
+                            let mission = item.mission?.name ?? "";
+
+                            return(
+                                company
+                                    .toLowerCase()
+                                    .includes(searchTerm) ||
+                                rocket
+                                    .toLowerCase()
+                                    .includes(searchTerm) ||
+                                mission
+                                    .toLowerCase()
+                                    .includes(searchTerm)
+                            );
+                        })
+                    .map((launch) =>
                     (
                         <Launch launch={launch} />
                     )

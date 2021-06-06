@@ -7,7 +7,7 @@ export const REQUEST_STATUS = {
   FAILURE: "failure",
 };
 
-const launchLibraryUrl = "https://ll.thespacedevs.com/2.0.0/launch/upcoming/?format=json&limit=12";
+const launchLibraryUrl = "https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json&limit=12";
 
 function useLaunchLibrary()
 {
