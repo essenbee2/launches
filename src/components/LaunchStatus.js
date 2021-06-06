@@ -1,14 +1,17 @@
 import React from "react";
 
-const LaunchStatus = ({ net, status, failreason, holdreason }) =>
+const LaunchStatus = ({ net, status, prob, failreason, holdreason }) =>
 {
     let statusCode = status !== null ? status.id : 2;
 
     return(
         <>
+            {prob !== -1
+                ? <div className="right floated meta">{prob}%</div>
+                : null}
             <div><i className="icon calendar"></i><b>NET</b>: {" "} {net}</div>
             <div><i className="icon check circle"></i><b>Status</b>: {" "}
-                <span className={statusCode === 3 ? "ui green text" : null}>
+                <span className={statusCode === 3 ? "ui green horizontal label" : null}>
                     {status.name}
                 </span>
             </div>

@@ -13,8 +13,9 @@ const Rocket = ( { launch }) => {
             </div>
             <div className="meta">
                 {launch.launch_service_provider.name}
-                {launch.webcast_live ? <i className="right floated large icon red youtube" 
-                 data-content="Live stream available"></i> : null}
+                {launch.webcast_live 
+                    ? <i className="right floated large icon red youtube"></i> 
+                    : null}
             </div>
         </>
     );
