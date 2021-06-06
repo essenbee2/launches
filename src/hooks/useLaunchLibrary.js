@@ -15,8 +15,6 @@ function useLaunchLibrary()
     const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
     const [error, setError] = useState("");
 
-    console.log(`URL = ${launchLibraryUrl}`);
-
     useEffect(() => {
       async function getLaunchData() {
         try {
@@ -31,10 +29,6 @@ function useLaunchLibrary()
       
       getLaunchData();
     }, []);
-
-    console.log(`data = ${launchData}`);
-    console.log(`status = ${requestStatus}`);
-    console.log(`error = ${error}`);
 
     return {
         launchData,

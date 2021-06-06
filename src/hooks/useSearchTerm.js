@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useSearchTerm(initialSearchTerm) {
+const useSearchTerm = (initialSearchTerm) => {
   const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
 
   return {

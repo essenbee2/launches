@@ -2,7 +2,7 @@ import Launches from "./Launches";
 import { SearchProvider } from "../contexts/SearchContext";
 import MenuBar from "./MenuBar";
 
-function LaunchCards() {
+const LaunchCards = () => {
   return (
     <SearchProvider initialSearchTerm="" >
       <MenuBar />
