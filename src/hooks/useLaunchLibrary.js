@@ -7,7 +7,7 @@ export const REQUEST_STATUS = {
   FAILURE: "failure",
 };
 
-const launchLibraryUrl = "https://lldev.thespacedevs.com/launch/upcoming";
+const launchLibraryUrl = "https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json";
 
 function useLaunchLibrary()
 {
@@ -15,20 +15,26 @@ function useLaunchLibrary()
     const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
     const [error, setError] = useState("");
 
+    console.log(`URL = ${launchLibraryUrl}`);
+
     useEffect(() => {
       async function getLaunchData() {
         try {
-          const data = await axios.get(launchLibraryUrl);
+          const result = await axios.get(launchLibraryUrl);
           setRequestStatus(REQUEST_STATUS.SUCCESS);
-          setlaunchData(data.results);
+          setlaunchData(result.data.results);
         } catch (e) {
           setRequestStatus(REQUEST_STATUS.FAILURE);
-          setError(e);
+          //setError(e);
         }
       }
       
       getLaunchData();
     }, []);
+
+    console.log(`data = ${launchData}`);
+    console.log(`status = ${requestStatus}`);
+    console.log(`error = ${error}`);
 
     return {
         launchData,

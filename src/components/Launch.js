@@ -20,7 +20,9 @@ const Launch = ({ launch }) =>
             <LaunchStatus net={net} status={status} failreason={failreason} holdreason={holdreason} />
             <div className="ui divider" />
             <div className="description">
-                {launch.mission.description}
+                {launch.mission !== null 
+                    ? launch.mission.description
+                    : "Mission details are unavailable at this time."}
             </div>
         </div>
     </div>

@@ -2,20 +2,30 @@ import React from "react";
 
 const LaunchHeader = ( {status, mission} ) =>
 {
-    
+    let statusCode = status !== null 
+        ? status.id 
+        : 2;
+    let missionName = mission !== null 
+        ? mission.name 
+        : "Unknown";
+
+    let missionType = mission !== null 
+        ? mission.type 
+        : "";
+
     return(
         <>
             <div className="header">
-            <i className={status.id !== 3 
+            <i className={statusCode !== 3 
                 ? "icon satellite dish"
                 : "icon green satellite dish"} /> 
-            {mission.name}
+            {missionName}
         </div>
-        {mission.orbit !== null
+        {(mission !== null && mission.orbit !== null)
             ? <div className="right floated meta">{mission.orbit.abbrev}</div>
             : null
         }
-        <div className="meta">{mission.type}</div>
+        <div className="meta">{missionType}</div>
     </>
     );
 }
