@@ -6,15 +6,17 @@ import ReactPlaceHolder from "react-placeholder";
 const Launches = () =>
 {
     const {
-        launchData: launchData,
+        launchData,
         requestStatus,
         error,
       } = useLaunchLibrary();
        
       if (requestStatus === REQUEST_STATUS.FAILURE) {
         return (
-          <div className="large error error">
-            ERROR: <b>Loading Launch Data Failed {error}</b>
+          <div>
+              <span className="ui large error text">
+                    <b>Loading Launch Data Failed with {error}</b>
+                </span>
           </div>
         );
       }

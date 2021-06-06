@@ -25,7 +25,7 @@ function useLaunchLibrary()
           setlaunchData(result.data.results);
         } catch (e) {
           setRequestStatus(REQUEST_STATUS.FAILURE);
-          //setError(e);
+          setError(`${e}`);
         }
       }
       
