@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { SearchContext } from "../contexts/SearchContext";
-import SearchField from "react-search-field";
+import FilterField from "./FilterField";
 
 const MenuBar = () => {
     const { setSearchTerm } = useContext(SearchContext);
@@ -8,11 +8,10 @@ const MenuBar = () => {
     return (
         <div className="ui menu">
             <div className="ui item">
-                <SearchField
+                <FilterField
                 placeholder="Filter..."
                 onSearchClick={ (value) => setSearchTerm(value) }
                 searchText=""
-                classNames="ui input focus"
                 />
             </div>
         </div>
