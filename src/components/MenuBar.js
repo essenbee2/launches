@@ -6,12 +6,15 @@ const MenuBar = () => {
     const { setSearchTerm } = useContext(SearchContext);
     
     return (
-        <div className="ui inverted menu">
-            <SearchField
-            placeholder="Filter..."
-            onSearchClick={ (value) => setSearchTerm(value) }
-            searchText=""
-            />
+        <div className="ui menu">
+            <div className="ui item">
+                <SearchField
+                placeholder="Filter..."
+                onSearchClick={ (value) => setSearchTerm(value) }
+                searchText=""
+                classNames="ui input focus"
+                />
+            </div>
         </div>
     );
 }
