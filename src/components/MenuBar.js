@@ -12,6 +12,7 @@ const MenuBar = () => {
                 placeholder="Filter..."
                 onSearchClick={ (value) => setSearchTerm(value) }
                 searchText=""
+                tooltip="Filter the launches displayed"
                 />
             </div>
         </div>

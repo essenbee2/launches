@@ -36,24 +36,6 @@ const Launches = () =>
                     rows={15}
                     ready={requestStatus === REQUEST_STATUS.SUCCESS} >
                 { launchData
-                    .filter((item) =>
-                        {
-                            let company = item.launch_service_provider?.name ?? "";
-                            let rocket = item.rocket?.configuration?.name ?? "";
-                            let mission = item.mission?.name ?? "";
-
-                            return(
-                                company
-                                    .toLowerCase()
-                                    .includes(searchTerm) ||
-                                rocket
-                                    .toLowerCase()
-                                    .includes(searchTerm) ||
-                                mission
-                                    .toLowerCase()
-                                    .includes(searchTerm)
-                            );
-                        })
                     .map((launch) =>
                     (
                         <Launch key={launch.id} launch={launch} />

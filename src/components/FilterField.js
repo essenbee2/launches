@@ -36,10 +36,11 @@ class FilterField extends React.Component {
             value={this.state.value}
           />
           <button
+            data-tooltip="Filter the launches displayed"
             className="ui icon button"
             onClick={this.onSearchClick}
           >
-            <i className="filter icon"></i>
+            <i className="filter link icon" ></i>
           </button>
         </div>
       );
