@@ -9,16 +9,17 @@ export const REQUEST_STATUS = {
 
 const launchLibraryUrl = "https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json&limit=12";
 
-function useLaunchLibrary()
+function useLaunchLibrary(searchTerm)
 {
-    const [launchData, setlaunchData] = useState([]);
-    const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
-    const [error, setError] = useState("");
+  let url = launchLibraryUrl + "&search=" + searchTerm;
+  const [launchData, setlaunchData] = useState([]);
+  const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
+  const [error, setError] = useState("");
 
     useEffect(() => {
       async function getLaunchData() {
         try {
-          const result = await axios.get(launchLibraryUrl);
+          const result = await axios.get(url);
           setRequestStatus(REQUEST_STATUS.SUCCESS);
           setlaunchData(result.data.results);
         } catch (e) {
@@ -28,7 +29,7 @@ function useLaunchLibrary()
       }
       
       getLaunchData();
-    }, []);
+    }, [url]);
 
     return {
         launchData,

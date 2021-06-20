@@ -56,7 +56,7 @@ const Launches = () =>
                         })
                     .map((launch) =>
                     (
-                        <Launch launch={launch} />
+                        <Launch key={launch.id} launch={launch} />
                     )
                 )}
             </ReactPlaceHolder>
