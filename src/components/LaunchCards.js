@@ -4,11 +4,11 @@ import MenuBar from "./MenuBar";
 
 const LaunchCards = () => {
   return (
-    <SearchProvider initialSearchTerm="" >
+    <SearchProvider initialSearchTerm="">
       <MenuBar />
       <Launches />
     </SearchProvider>
   );
-}
+};
 
 export default LaunchCards;

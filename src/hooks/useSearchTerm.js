@@ -7,6 +7,6 @@ const useSearchTerm = (initialSearchTerm) => {
     searchTerm,
     setSearchTerm,
   };
-}
+};
 
 export default useSearchTerm;
